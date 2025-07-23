@@ -330,6 +330,33 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* Smoother custom ease */
             text-align: center; position: relative; overflow: hidden;
         }
+         .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 40px; border-radius: 50px; text-decoration: none;
+            font-weight: 600;
+            transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            position: relative; overflow: hidden; border: none; cursor: pointer;
+            z-index: 1; font-size: 16px; letter-spacing: 0.5px;
+        }
+        .btn i { margin-right: 8px; }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-light), var(--primary-dark));
+            color: white; box-shadow: 0 10px 20px rgba(138, 43, 226, 0.3);
+        }
+        .btn-outline {
+            background: transparent; color: var(--light);
+            border: 2px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.1);
+        }
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(138, 43, 226, 0.4);
+        }
+        .btn-outline:hover { background-color: var(--primary); color: white; }
+        .btn:active { transform: translateY(-2px) scale(1.02); }
+
         .service-card.is-visible { opacity: 1; transform: translateY(0) scale(1); }
         .service-card::before { /* Removed shine, can be distracting on multiple cards */ }
         .service-card:hover {
