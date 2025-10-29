@@ -921,12 +921,12 @@
                     <p>I am continuously learning, evolving, and adopting future-ready technologies — because success in the digital world never stops.</p>
                     
                     <div class="skills" data-stagger-children="true">
-                        <div class="skill-item animate-on-scroll"><div class="skill-name"><span>HTML/Tailwind CSS</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
-                        <div class="skill-item animate-on-scroll"><div class="skill-name"><span>JavaScript</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" data-width="85%"></div></div></div>
-                        <div class="skill-item animate-on-scroll"><div class="skill-name"><span>React</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" data-width="80%"></div></div></div>
-                        <div class="skill-item animate-on-scroll"><div class="skill-name"><span>PHP/Laravel</span><span>75%</span></div><div class="skill-bar"><div class="skill-progress" data-width="75%"></div></div></div>
-                        <div class="skill-item animate-on-scroll"><div class="skill-name"><span>WordPress</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" data-width="95%"></div></div></div>
-                        <div class="skill-item animate-on-scroll"><div class="skill-name"><span>Shopify</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" data-width="90%"></div></div></div>
+                        <div class="skill-item animate-on-scroll" data-width="90%"><div class="skill-name"><span>HTML/Tailwind CSS</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 0%"></div></div></div>
+                        <div class="skill-item animate-on-scroll" data-width="85%"><div class="skill-name"><span>JavaScript</span><span>85%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 0%"></div></div></div>
+                        <div class="skill-item animate-on-scroll" data-width="80%"><div class="skill-name"><span>React</span><span>80%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 0%"></div></div></div>
+                        <div class="skill-item animate-on-scroll" data-width="75%"><div class="skill-name"><span>PHP/Laravel</span><span>75%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 0%"></div></div></div>
+                        <div class="skill-item animate-on-scroll" data-width="95%"><div class="skill-name"><span>WordPress</span><span>95%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 0%"></div></div></div>
+                        <div class="skill-item animate-on-scroll" data-width="90%"><div class="skill-name"><span>Shopify</span><span>90%</span></div><div class="skill-bar"><div class="skill-progress" style="width: 0%"></div></div></div>
                     </div>
                 </div>
             </div>
@@ -1260,11 +1260,13 @@
                     const delay = parseFloat(entry.target.dataset.delay) || 0;
                     entry.target.style.transitionDelay = `${delay}s`;
 
-                    if (entry.target.classList.contains('skill-progress')) {
+                    // Animate skill progress bars
+                    if (entry.target.classList.contains('skill-item')) {
+                        const width = entry.target.getAttribute('data-width');
+                        const progressBar = entry.target.querySelector('.skill-progress');
                         setTimeout(() => {
-                            const width = entry.target.getAttribute('data-width');
-                            entry.target.style.width = width;
-                        }, delay * 1000 + 50);
+                            progressBar.style.width = width;
+                        }, delay * 1000 + 200);
                     }
                     
                     if (entry.target.dataset.staggerChildren) {
@@ -1273,11 +1275,14 @@
                             const childDelay = parseFloat(child.dataset.delay) || 0;
                             child.style.transitionDelay = `${childDelay + index * 0.15}s`;
                             child.classList.add('is-visible');
-                            if (child.classList.contains('skill-progress')) {
+                            
+                            // Animate child skill progress bars
+                            if (child.classList.contains('skill-item')) {
+                                const width = child.getAttribute('data-width');
+                                const progressBar = child.querySelector('.skill-progress');
                                 setTimeout(() => {
-                                    const width = child.getAttribute('data-width');
-                                    child.style.width = width;
-                                }, (childDelay + index * 0.15) * 1000 + 50);
+                                    progressBar.style.width = width;
+                                }, (childDelay + index * 0.15) * 1000 + 200);
                             }
                         });
                     }
