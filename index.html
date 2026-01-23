@@ -35,6 +35,7 @@ s0.parentNode.insertBefore(s1,s0);
             --gray-light: #a0a0b0;
             --glass-bg: rgba(26, 26, 45, 0.6);
             --glass-border: rgba(255, 255, 255, 0.08);
+            --whatsapp: #25D366;
         }
 
         * {
@@ -475,6 +476,28 @@ s0.parentNode.insertBefore(s1,s0);
             background: var(--primary); transform: translateY(-6px) scale(1.15);
             box-shadow: 0 12px 25px rgba(108, 99, 255, 0.35); color: white;
         }
+        
+        /* WhatsApp Specific Button */
+        .social-links a.whatsapp-btn {
+            background: rgba(37, 211, 102, 0.15);
+            border-color: rgba(37, 211, 102, 0.3);
+            color: #25D366;
+        }
+        .social-links a.whatsapp-btn:hover {
+            background: #25D366;
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+            color: white;
+        }
+        .social-icon.whatsapp-icon {
+            background: rgba(37, 211, 102, 0.15);
+            border-color: rgba(37, 211, 102, 0.3);
+            color: #25D366;
+        }
+        .social-icon.whatsapp-icon:hover {
+            background: #25D366;
+            box-shadow: 0 12px 25px rgba(37, 211, 102, 0.35);
+            color: white;
+        }
 
         .contact-form {
             flex: 1.3; background: var(--glass-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
@@ -609,6 +632,45 @@ s0.parentNode.insertBefore(s1,s0);
         .back-to-top:hover {
             background: var(--primary-dark); transform: translateY(-6px) scale(1.1);
             box-shadow: 0 12px 30px rgba(108,99,255,0.6);
+        }
+
+        /* Floating WhatsApp Button */
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 100px;
+            right: 35px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            cursor: pointer;
+            text-decoration: none;
+            animation: pulse-whatsapp 2s infinite;
+        }
+        .floating-whatsapp.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .floating-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-6px) scale(1.1);
+            box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
+            animation: none;
+        }
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         /* --- Responsive Adjustments --- */
@@ -850,6 +912,7 @@ s0.parentNode.insertBefore(s1,s0);
             .footer-copyright p, .footer-credits p { font-size: 12.5px; }
 
             .back-to-top { width: 45px; height: 45px; font-size: 18px; bottom: 20px; right: 20px; }
+            .floating-whatsapp { width: 45px; height: 45px; font-size: 20px; bottom: 80px; right: 20px; }
         }
     </style>
 </head>
@@ -1071,6 +1134,13 @@ s0.parentNode.insertBefore(s1,s0);
                                 <p><a href="tel:+923128548296">+92 312 8548296</a></p>
                             </div>
                         </div>
+                        <div class="contact-item animate-on-scroll">
+                            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+                            <div class="contact-text">
+                                <h4>WhatsApp</h4>
+                                <p><a href="https://wa.me/923128548296" target="_blank">+92 312 8548296</a></p>
+                            </div>
+                        </div>
                     </div>
                     <h3 class="animate-on-scroll">Follow <span>Me</span></h3>
                     <div class="social-links animate-on-scroll" data-stagger-children="true">
@@ -1078,6 +1148,7 @@ s0.parentNode.insertBefore(s1,s0);
                         <a href="https://www.instagram.com/litrlly__fahad/?igsh=eDdmbXlmZXcxcDNo#" class="animate-on-scroll"><i class="fab fa-instagram"></i></a>
                         <a href="https://www.linkedin.com/in/fahad-awan-03b422250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="animate-on-scroll"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="animate-on-scroll"><i class="fab fa-github"></i></a>
+                        <a href="https://wa.me/923128548296" target="_blank" class="whatsapp-btn animate-on-scroll"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
                 <div class="contact-form animate-on-scroll" data-delay="0.2">
@@ -1125,6 +1196,7 @@ s0.parentNode.insertBefore(s1,s0);
                             <a href="https://www.instagram.com/litrlly__fahad/?igsh=eDdmbXlmZXcxcDNo#" class="social-icon animate-on-scroll"><i class="fab fa-instagram"></i></a>
                             <a href="https://www.linkedin.com/in/fahad-awan-03b422250?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-icon animate-on-scroll"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#" class="social-icon animate-on-scroll"><i class="fab fa-github"></i></a>
+                            <a href="https://wa.me/923128548296" target="_blank" class="social-icon whatsapp-icon animate-on-scroll"><i class="fab fa-whatsapp"></i></a>
                         </div>
                     </div>
                     <div class="footer-col animate-on-scroll">
@@ -1153,6 +1225,7 @@ s0.parentNode.insertBefore(s1,s0);
                             <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><p>Karachi, Pakistan</p></div>
                             <div class="footer-contact-item"><i class="fas fa-envelope"></i><p><a href="mailto:fahad.developer3122@gmail.com">fahad.developer3122@gmail.com</a></p></div>
                             <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><p><a href="tel:+923128548296">+92 312 8548296</a></p></div>
+                            <div class="footer-contact-item"><i class="fab fa-whatsapp"></i><p><a href="https://wa.me/923128548296" target="_blank">WhatsApp: +92 312 8548296</a></p></div>
                         </div>
                     </div>
                 </div>
@@ -1162,6 +1235,11 @@ s0.parentNode.insertBefore(s1,s0);
             </div>
         </div>
     </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/923128548296" target="_blank" class="floating-whatsapp" id="floatingWhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
     <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
 
@@ -1215,10 +1293,12 @@ s0.parentNode.insertBefore(s1,s0);
         });
         updateActiveLink();
 
-        // Back to Top
+        // Back to Top & Floating WhatsApp
         const backToTopBtn = document.querySelector('.back-to-top');
+        const floatingWhatsAppBtn = document.getElementById('floatingWhatsApp');
         window.addEventListener('scroll', () => {
             backToTopBtn.classList.toggle('active', window.pageYOffset > 350);
+            floatingWhatsAppBtn.classList.toggle('active', window.pageYOffset > 350);
         });
 
         // Particles.js
@@ -1348,7 +1428,3 @@ s0.parentNode.insertBefore(s1,s0);
     </script>
 </body>
 </html>
-
-
-
-
