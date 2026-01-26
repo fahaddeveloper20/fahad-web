@@ -1493,10 +1493,9 @@
             font-size: 15px;
         }
 
-        /* FIXED: Achievements Section */
+        /* Achievements Section */
         .achievements-section {
             background: linear-gradient(135deg, rgba(13, 13, 26, 0.9), rgba(22, 22, 38, 0.9));
-            padding: 120px 0;
         }
 
         .achievements-grid {
@@ -1555,7 +1554,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
-            display: block;
         }
 
         .achievement-text {
@@ -2836,7 +2834,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="hero-image">
+                <div class="">
                     <img src="hero1.webp" alt="Muhammad Fahad" class="main-img">
                 </div>
             </div>
@@ -2850,9 +2848,9 @@
                 <h2>About Me</h2>
             </div>
             <div class="about-content animate-on-scroll">
-                <div class="about-image">
+                <!-- <div class="about-image">
                     <img src="hero1.webp" alt="Muhammad Fahad">
-                </div>
+                </div> -->
                 <div class="about-text">
                     <h3>Welcome to my <span>Digital Space!</span></h3>
                     <p>
@@ -3374,8 +3372,8 @@
         </div>
     </section>
 
-    <!-- FIXED: Achievements Section -->
-    <section class="section achievements-section" id="achievements">
+    <!-- Achievements Section -->
+    <!-- <section class="section achievements-section">
         <div class="container">
             <div class="section-title">
                 <h2>Achievements</h2>
@@ -3385,27 +3383,27 @@
             <div class="achievements-grid">
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-code-branch"></i></div>
-                    <div class="achievement-number" data-count="50">50+</div>
+                    <div class="achievement-number">50+</div>
                     <div class="achievement-text">Projects Completed</div>
                 </div>
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-users"></i></div>
-                    <div class="achievement-number" data-count="40">40+</div>
+                    <div class="achievement-number">40+</div>
                     <div class="achievement-text">Happy Clients</div>
                 </div>
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-clock"></i></div>
-                    <div class="achievement-number" data-count="3">3+</div>
+                    <div class="achievement-number">3+</div>
                     <div class="achievement-text">Years Experience</div>
                 </div>
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-award"></i></div>
-                    <div class="achievement-number" data-count="100">100%</div>
+                    <div class="achievement-number">100%</div>
                     <div class="achievement-text">Client Satisfaction</div>
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Testimonials Section -->
     <section class="section testimonials">
@@ -3612,8 +3610,9 @@
                         <p>© <span id="year"></span> Muhammad Fahad. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> by <a href="#home">Muhammad Fahad</a></p>
                     </div>
                     <div class="footer-credits">
-                        <a href="#privacy"><i class="fas fa-lock"></i> Privacy Policy</a>
-                        <a href="#terms"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                        <a href="privacy-policy.html"><i class="fas fa-lock"></i> Privacy Policy</a>
+                        <a href="terms&condition.html"><i class="fas fa-file-contract"></i> Terms of Service</a>
+                        <a href="return&refund-policy.html"><i class="fas fa-file-contract"></i> Refund Policy</a>
                     </div>
                 </div>
             </div>
@@ -3751,10 +3750,10 @@
             const timer = setInterval(() => {
                 current += step;
                 if (current >= target) {
-                    element.textContent = target + (element.classList.contains('achievement-number') ? '+' : '');
+                    element.textContent = target + '+';
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(current) + (element.classList.contains('achievement-number') ? '+' : '');
+                    element.textContent = Math.floor(current) + '+';
                 }
             }, 16);
         }
@@ -3782,8 +3781,10 @@
                         }, delay * 1000 + 300);
                     }
                     
-                    // Animate stat numbers and achievement numbers
+                    // Animate stat numbers
                     if (entry.target.classList.contains('stat-number') || entry.target.classList.contains('achievement-number')) {
+                        // Reset counter to 0 before animation
+                        entry.target.textContent = '0';
                         // Start animation after a small delay
                         setTimeout(() => {
                             animateCounter(entry.target);
@@ -3898,7 +3899,7 @@
                 const achievementNumbers = document.querySelectorAll('.achievement-number');
                 achievementNumbers.forEach(stat => {
                     stat.textContent = '0';
-                    // We'll animate these when they scroll into view via IntersectionObserver
+                    animateCounter(stat);
                 });
             }, 1000);
         });
