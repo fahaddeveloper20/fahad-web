@@ -1493,9 +1493,10 @@
             font-size: 15px;
         }
 
-        /* Achievements Section */
+        /* FIXED: Achievements Section */
         .achievements-section {
             background: linear-gradient(135deg, rgba(13, 13, 26, 0.9), rgba(22, 22, 38, 0.9));
+            padding: 120px 0;
         }
 
         .achievements-grid {
@@ -1554,6 +1555,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
+            display: block;
         }
 
         .achievement-text {
@@ -3372,8 +3374,8 @@
         </div>
     </section>
 
-    <!-- Achievements Section -->
-    <section class="section achievements-section">
+    <!-- FIXED: Achievements Section -->
+    <section class="section achievements-section" id="achievements">
         <div class="container">
             <div class="section-title">
                 <h2>Achievements</h2>
@@ -3383,22 +3385,22 @@
             <div class="achievements-grid">
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-code-branch"></i></div>
-                    <div class="achievement-number">50+</div>
+                    <div class="achievement-number" data-count="50">0</div>
                     <div class="achievement-text">Projects Completed</div>
                 </div>
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-users"></i></div>
-                    <div class="achievement-number">40+</div>
+                    <div class="achievement-number" data-count="40">0</div>
                     <div class="achievement-text">Happy Clients</div>
                 </div>
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-clock"></i></div>
-                    <div class="achievement-number">3+</div>
+                    <div class="achievement-number" data-count="3">0</div>
                     <div class="achievement-text">Years Experience</div>
                 </div>
                 <div class="achievement-card animate-on-scroll">
                     <div class="achievement-icon"><i class="fas fa-award"></i></div>
-                    <div class="achievement-number">100%</div>
+                    <div class="achievement-number" data-count="100">0</div>
                     <div class="achievement-text">Client Satisfaction</div>
                 </div>
             </div>
@@ -3749,10 +3751,10 @@
             const timer = setInterval(() => {
                 current += step;
                 if (current >= target) {
-                    element.textContent = target + '+';
+                    element.textContent = target + (element.classList.contains('achievement-number') ? '+' : '');
                     clearInterval(timer);
                 } else {
-                    element.textContent = Math.floor(current) + '+';
+                    element.textContent = Math.floor(current) + (element.classList.contains('achievement-number') ? '+' : '');
                 }
             }, 16);
         }
@@ -3780,10 +3782,8 @@
                         }, delay * 1000 + 300);
                     }
                     
-                    // Animate stat numbers
+                    // Animate stat numbers and achievement numbers
                     if (entry.target.classList.contains('stat-number') || entry.target.classList.contains('achievement-number')) {
-                        // Reset counter to 0 before animation
-                        entry.target.textContent = '0';
                         // Start animation after a small delay
                         setTimeout(() => {
                             animateCounter(entry.target);
@@ -3898,7 +3898,7 @@
                 const achievementNumbers = document.querySelectorAll('.achievement-number');
                 achievementNumbers.forEach(stat => {
                     stat.textContent = '0';
-                    animateCounter(stat);
+                    // We'll animate these when they scroll into view via IntersectionObserver
                 });
             }, 1000);
         });
