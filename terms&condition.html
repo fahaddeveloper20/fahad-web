@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | Muhammad Fahad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-light: #8c84ff;
+            --primary-dark: #564fc9;
+            --secondary: #ff4d5a;
+            --dark: #0d0d1a;
+            --dark-gray: #161626;
+            --darker: #0a0a1a;
+            --light: #f0f0f5;
+            --gray-light: #b0b0c0;
+            --glass-bg: rgba(30, 30, 46, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, var(--primary), #00d4ff);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            padding: 25px 0;
+            background: rgba(13, 13, 26, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+            color: var(--primary-light);
+        }
+
+        .logo span {
+            color: var(--primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 25px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(108, 99, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background: var(--light);
+            margin: 6px 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        /* Hero Section for Terms Pages */
+        .terms-hero {
+            padding: 200px 0 100px;
+            background: linear-gradient(135deg, rgba(22, 22, 38, 0.9), rgba(13, 13, 26, 0.9));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+            top: -300px;
+            right: -300px;
+            z-index: -1;
+        }
+
+        .terms-hero h1 {
+            font-size: clamp(48px, 6vw, 64px);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--light), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .terms-hero p {
+            font-size: clamp(18px, 3vw, 22px);
+            color: var(--gray-light);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            font-size: 14px;
+        }
+
+        .last-updated i {
+            color: var(--primary);
+        }
+
+        /* Terms Content */
+        .terms-content {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(13, 13, 26, 0.9), rgba(22, 22, 38, 0.9));
+        }
+
+        .terms-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .terms-section {
+            margin-bottom: 60px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .terms-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .terms-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .terms-section h2 i {
+            font-size: 24px;
+        }
+
+        .terms-section h3 {
+            color: var(--light);
+            margin: 25px 0 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .terms-section p {
+            color: var(--gray-light);
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .terms-section ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .terms-section li {
+            color: var(--gray-light);
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .terms-section strong {
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        /* Important Notice */
+        .important-notice {
+            background: rgba(255, 77, 90, 0.1);
+            border: 1px solid rgba(255, 77, 90, 0.3);
+            padding: 25px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .important-notice h3 {
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .important-notice p {
+            color: var(--gray-light);
+        }
+
+        /* Agreement Box */
+        .agreement-box {
+            background: rgba(108, 99, 255, 0.1);
+            border: 1px solid rgba(108, 99, 255, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+        }
+
+        .agreement-box h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card p {
+            color: var(--gray-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            color: var(--light);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .footer-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        .footer-copyright a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.6);
+        }
+
+        /* Table of Contents */
+        .toc-container {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .toc-container h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .toc-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc-item a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc-item a:hover {
+            color: var(--primary-light);
+        }
+
+        .toc-item i {
+            color: var(--primary);
+            font-size: 12px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .terms-section {
+                padding: 30px;
+            }
+            
+            .toc-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .back-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .terms-hero {
+                padding: 180px 0 80px;
+            }
+
+            .terms-content {
+                padding: 80px 0;
+            }
+
+            .terms-section {
+                padding: 25px;
+            }
+
+            .terms-section h2 {
+                font-size: 24px;
+            }
+
+            .toc-list {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+
+            .terms-hero h1 {
+                font-size: clamp(36px, 8vw, 48px);
+            }
+
+            .terms-hero p {
+                font-size: 16px;
+            }
+
+            .terms-section {
+                padding: 20px;
+            }
+
+            .terms-section h2 {
+                font-size: 22px;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fas fa-code"></i>Muhammad <span>Fahad</span></a>
+                <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="terms-hero">
+        <div class="container">
+            <h1>Terms of Service</h1>
+            <p>By accessing and using our website and services, you agree to be bound by these Terms of Service. Please read them carefully.</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Last Updated: December 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container terms-container">
+            <!-- Table of Contents -->
+            <div class="toc-container">
+                <h3><i class="fas fa-list"></i> Table of Contents</h3>
+                <div class="toc-list">
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#acceptance">1. Acceptance of Terms</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#services">2. Services Description</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#user-responsibilities">3. User Responsibilities</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#intellectual-property">4. Intellectual Property</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#payments">5. Payments & Fees</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#liability">6. Limitation of Liability</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#termination">7. Termination</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#governing-law">8. Governing Law</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#changes">9. Changes to Terms</a>
+                    </div>
+                    <div class="toc-item">
+                        <i class="fas fa-chevron-right"></i>
+                        <a href="#contact">10. Contact Information</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Notice -->
+            <div class="important-notice">
+                <h3><i class="fas fa-exclamation-triangle"></i> Important Notice</h3>
+                <p>These Terms of Service constitute a legally binding agreement between you and Muhammad Fahad. By accessing or using our services, you acknowledge that you have read, understood, and agree to be bound by these terms.</p>
+            </div>
+
+            <!-- 1. Acceptance of Terms -->
+            <div class="terms-section" id="acceptance">
+                <h2><i class="fas fa-check-circle"></i> 1. Acceptance of Terms</h2>
+                <p>By accessing and using the website and services of Muhammad Fahad ("we," "us," or "our"), you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
+                <p>If you do not agree with any of these terms, you are prohibited from using or accessing this site. The materials contained in this website are protected by applicable copyright and trademark law.</p>
+            </div>
+
+            <!-- 2. Services Description -->
+            <div class="terms-section" id="services">
+                <h2><i class="fas fa-concierge-bell"></i> 2. Services Description</h2>
+                <p>We provide professional web development services including but not limited to:</p>
+                <ul>
+                    <li>Custom website development</li>
+                    <li>WordPress development and customization</li>
+                    <li>UI/UX design services</li>
+                    <li>E-commerce solutions</li>
+                    <li>Website maintenance and support</li>
+                    <li>SEO optimization services</li>
+                </ul>
+                <p>All services are provided on a project-by-project basis with specific terms outlined in individual service agreements.</p>
+            </div>
+
+            <!-- 3. User Responsibilities -->
+            <div class="terms-section" id="user-responsibilities">
+                <h2><i class="fas fa-user-shield"></i> 3. User Responsibilities</h2>
+                <p>When using our services, you agree to:</p>
+                
+                <h3>Accurate Information</h3>
+                <p>Provide accurate, current, and complete information during the consultation and project initiation process.</p>
+
+                <h3>Timely Communication</h3>
+                <p>Respond to communications in a timely manner to ensure project deadlines are met.</p>
+
+                <h3>Content Provision</h3>
+                <p>Provide all necessary content, images, and materials required for the project in the agreed format and timeline.</p>
+
+                <h3>Legal Compliance</h3>
+                <p>Ensure that all materials provided do not infringe upon any copyright, trademark, or other proprietary rights.</p>
+            </div>
+
+            <!-- 4. Intellectual Property -->
+            <div class="terms-section" id="intellectual-property">
+                <h2><i class="fas fa-copyright"></i> 4. Intellectual Property</h2>
+                <p>All intellectual property rights are protected as follows:</p>
+                
+                <h3>Client Materials</h3>
+                <p>All materials provided by the client remain the property of the client. We require proper authorization to use any copyrighted materials.</p>
+
+                <h3>Developed Work</h3>
+                <p>Upon full payment, the client receives ownership of the completed work, excluding:</p>
+                <ul>
+                    <li>Third-party components and libraries</li>
+                    <li>Proprietary development tools</li>
+                    <li>Pre-existing code and frameworks</li>
+                </ul>
+
+                <h3>Portfolio Rights</h3>
+                <p>We retain the right to display completed work in our portfolio and marketing materials unless otherwise specified in writing.</p>
+            </div>
+
+            <!-- 5. Payments & Fees -->
+            <div class="terms-section" id="payments">
+                <h2><i class="fas fa-credit-card"></i> 5. Payments & Fees</h2>
+                <p>Payment terms are as follows:</p>
+                
+                <h3>Project Pricing</h3>
+                <p>All projects are quoted individually based on scope and requirements. Quotes are valid for 30 days from the date of issue.</p>
+
+                <h3>Payment Schedule</h3>
+                <p>Standard payment terms include:</p>
+                <ul>
+                    <li>50% deposit to begin work</li>
+                    <li>25% upon design approval</li>
+                    <li>25% upon project completion</li>
+                </ul>
+
+                <h3>Additional Costs</h3>
+                <p>Client is responsible for third-party costs including but not limited to:</p>
+                <ul>
+                    <li>Domain registration and hosting</li>
+                    <li>Premium plugins and themes</li>
+                    <li>Stock images and fonts</li>
+                    <li>SSL certificates</li>
+                </ul>
+            </div>
+
+            <!-- Agreement Box -->
+            <div class="agreement-box">
+                <h3><i class="fas fa-handshake"></i> Project Agreement</h3>
+                <p>Each project will be governed by a separate Project Agreement that details specific deliverables, timelines, payment terms, and other project-specific conditions. The Project Agreement supersedes these general Terms of Service for that specific project.</p>
+            </div>
+
+            <!-- 6. Limitation of Liability -->
+            <div class="terms-section" id="liability">
+                <h2><i class="fas fa-balance-scale"></i> 6. Limitation of Liability</h2>
+                <p>Our liability is limited as follows:</p>
+                
+                <h3>Service Limitations</h3>
+                <p>We make no warranties about the completeness, reliability, or accuracy of information on our website. Any reliance you place on such information is strictly at your own risk.</p>
+
+                <h3>Damages</h3>
+                <p>In no event shall Muhammad Fahad be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on our website.</p>
+
+                <h3>Maximum Liability</h3>
+                <p>Our total liability for any claim shall not exceed the total amount paid by the client for the specific project in question.</p>
+            </div>
+
+            <!-- 7. Termination -->
+            <div class="terms-section" id="termination">
+                <h2><i class="fas fa-ban"></i> 7. Termination</h2>
+                <p>Either party may terminate a project under the following conditions:</p>
+                
+                <h3>Client Termination</h3>
+                <p>Clients may terminate a project at any time by providing written notice. Work completed to that point will be billed proportionally.</p>
+
+                <h3>Provider Termination</h3>
+                <p>We reserve the right to terminate services if:</p>
+                <ul>
+                    <li>Client fails to make payments as scheduled</li>
+                    <li>Client fails to provide required materials or feedback</li>
+                    <li>Client violates these Terms of Service</li>
+                </ul>
+            </div>
+
+            <!-- 8. Governing Law -->
+            <div class="terms-section" id="governing-law">
+                <h2><i class="fas fa-gavel"></i> 8. Governing Law</h2>
+                <p>These Terms of Service shall be governed by and construed in accordance with the laws of Pakistan, without regard to its conflict of law provisions.</p>
+                <p>Any dispute arising from these terms shall be subject to the exclusive jurisdiction of the courts located in Karachi, Pakistan.</p>
+            </div>
+
+            <!-- 9. Changes to Terms -->
+            <div class="terms-section" id="changes">
+                <h2><i class="fas fa-edit"></i> 9. Changes to Terms</h2>
+                <p>We reserve the right to modify these Terms of Service at any time. We will notify users of any changes by:</p>
+                <ul>
+                    <li>Posting the new Terms of Service on this page</li>
+                    <li>Updating the "Last Updated" date</li>
+                    <li>Sending an email notification for major changes</li>
+                </ul>
+                <p>Your continued use of our services after any changes constitutes acceptance of the new terms.</p>
+            </div>
+
+            <!-- 10. Contact Information -->
+            <div class="terms-section" id="contact">
+                <h2><i class="fas fa-envelope"></i> 10. Contact Information</h2>
+                <p>For any questions about these Terms of Service, please contact us:</p>
+                <ul>
+                    <li><strong>Email:</strong> fahad.developer3122@gmail.com</li>
+                    <li><strong>Phone:</strong> +92 312 8548296</li>
+                    <li><strong>Address:</strong> Karachi, Pakistan</li>
+                </ul>
+            </div>
+
+            <!-- Contact Card -->
+            <div class="contact-card">
+                <h3>Need Legal Assistance?</h3>
+                <p>If you have questions about these terms or need to discuss specific legal concerns regarding our services, please contact us directly.</p>
+                <a href="mailto:fahad.developer3122@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> Contact Legal Team
+                </a>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo"><i class="fas fa-code"></i>Muhammad <span>Fahad</span></a>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms&condition.html">Terms of Service</a>
+                    <a href="return&refund-policy.html">Refund Policy</a>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© <span id="year"></span>Muhammad Fahad. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> by <a href="#home">Muhammad Fahad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Back to Top functionality
+        const backToTopBtn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('active', window.pageYOffset > 300);
+        });
+
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Sticky header
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc-item a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

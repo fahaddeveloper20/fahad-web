@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Muhammad Fahad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6c63ff;
+            --primary-light: #8c84ff;
+            --primary-dark: #564fc9;
+            --secondary: #ff4d5a;
+            --dark: #0d0d1a;
+            --dark-gray: #161626;
+            --darker: #0a0a1a;
+            --light: #f0f0f5;
+            --gray-light: #b0b0c0;
+            --glass-bg: rgba(30, 30, 46, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --gradient-primary: linear-gradient(135deg, var(--primary), #00d4ff);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark);
+            color: var(--light);
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            padding: 25px 0;
+            background: rgba(13, 13, 26, 0.95);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+        }
+
+        header.scrolled {
+            padding: 15px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid rgba(108, 99, 255, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--light);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo:hover {
+            transform: translateY(-2px);
+            color: var(--primary-light);
+        }
+
+        .logo span {
+            color: var(--primary);
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo i {
+            color: var(--primary);
+            font-size: 24px;
+        }
+
+        .back-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 25px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: rgba(108, 99, 255, 0.2);
+            transform: translateX(-5px);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 5px;
+        }
+
+        .hamburger div {
+            width: 30px;
+            height: 3px;
+            background: var(--light);
+            margin: 6px 0;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        }
+
+        /* Hero Section for Policy Pages */
+        .policy-hero {
+            padding: 200px 0 100px;
+            background: linear-gradient(135deg, rgba(22, 22, 38, 0.9), rgba(13, 13, 26, 0.9));
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .policy-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(108, 99, 255, 0.1) 0%, transparent 70%);
+            top: -300px;
+            right: -300px;
+            z-index: -1;
+        }
+
+        .policy-hero h1 {
+            font-size: clamp(48px, 6vw, 64px);
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--light), var(--primary-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .policy-hero p {
+            font-size: clamp(18px, 3vw, 22px);
+            color: var(--gray-light);
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .last-updated {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 25px;
+            background: rgba(108, 99, 255, 0.1);
+            border-radius: 8px;
+            border: 1px solid rgba(108, 99, 255, 0.2);
+            font-size: 14px;
+        }
+
+        .last-updated i {
+            color: var(--primary);
+        }
+
+        /* Policy Content */
+        .policy-content {
+            padding: 100px 0;
+            background: linear-gradient(135deg, rgba(13, 13, 26, 0.9), rgba(22, 22, 38, 0.9));
+        }
+
+        .policy-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .policy-section {
+            margin-bottom: 60px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .policy-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.1);
+            border-color: var(--primary);
+        }
+
+        .policy-section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 28px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .policy-section h2 i {
+            font-size: 24px;
+        }
+
+        .policy-section h3 {
+            color: var(--light);
+            margin: 25px 0 15px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .policy-section p {
+            color: var(--gray-light);
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .policy-section ul {
+            margin: 20px 0;
+            padding-left: 20px;
+        }
+
+        .policy-section li {
+            color: var(--gray-light);
+            margin-bottom: 10px;
+            padding-left: 10px;
+        }
+
+        .policy-section strong {
+            color: var(--light);
+            font-weight: 600;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        .contact-card h3 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card p {
+            color: var(--gray-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: var(--gradient-primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(108, 99, 255, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--darker);
+            color: var(--light);
+            padding: 60px 0 30px;
+            border-top: 1px solid rgba(108, 99, 255, 0.2);
+        }
+
+        .footer-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-logo span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .footer-links a {
+            color: var(--gray-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+        }
+
+        .footer-copyright a {
+            color: var(--primary-light);
+            text-decoration: none;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 10px 30px rgba(108, 99, 255, 0.5);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(108, 99, 255, 0.6);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .policy-section {
+                padding: 30px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .back-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+            }
+
+            .policy-hero {
+                padding: 180px 0 80px;
+            }
+
+            .policy-content {
+                padding: 80px 0;
+            }
+
+            .policy-section {
+                padding: 25px;
+            }
+
+            .policy-section h2 {
+                font-size: 24px;
+            }
+
+            .contact-card {
+                padding: 30px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                width: 95%;
+            }
+
+            .policy-hero h1 {
+                font-size: clamp(36px, 8vw, 48px);
+            }
+
+            .policy-hero p {
+                font-size: 16px;
+            }
+
+            .policy-section {
+                padding: 20px;
+            }
+
+            .policy-section h2 {
+                font-size: 22px;
+            }
+
+            .contact-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fas fa-code"></i>Muhammad <span>Fahad</span></a>
+                <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                <div class="hamburger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="policy-hero">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website.</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Last Updated: December 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Content -->
+    <section class="policy-content">
+        <div class="container policy-container">
+            <!-- Introduction -->
+            <div class="policy-section">
+                <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+                <p>This Privacy Policy describes how Muhammad Fahad ("we," "us," or "our") collects, uses, and shares your personal information when you use our website (https://muhammadfahad.com) and services.</p>
+                <p>We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This policy outlines our practices regarding data collection, use, and disclosure.</p>
+            </div>
+
+            <!-- Information We Collect -->
+            <div class="policy-section">
+                <h2><i class="fas fa-database"></i> Information We Collect</h2>
+                <p>We may collect the following types of information:</p>
+                
+                <h3>Personal Information</h3>
+                <p>When you contact us through our website, we may collect:</p>
+                <ul>
+                    <li>Your name and email address</li>
+                    <li>Phone number (if provided)</li>
+                    <li>Company name (if provided)</li>
+                    <li>Any other information you voluntarily provide in your message</li>
+                </ul>
+
+                <h3>Automatically Collected Information</h3>
+                <p>When you visit our website, we may automatically collect:</p>
+                <ul>
+                    <li>IP address and browser type</li>
+                    <li>Device information</li>
+                    <li>Pages visited and time spent on site</li>
+                    <li>Referring website</li>
+                    <li>Clickstream data</li>
+                </ul>
+
+                <h3>Cookies and Tracking Technologies</h3>
+                <p>We use cookies and similar tracking technologies to track activity on our website and store certain information. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent.</p>
+            </div>
+
+            <!-- How We Use Your Information -->
+            <div class="policy-section">
+                <h2><i class="fas fa-cogs"></i> How We Use Your Information</h2>
+                <p>We use the information we collect for various purposes:</p>
+                <ul>
+                    <li>To respond to your inquiries and provide customer support</li>
+                    <li>To improve and optimize our website</li>
+                    <li>To analyze how users interact with our website</li>
+                    <li>To send you updates about our services (with your consent)</li>
+                    <li>To prevent fraud and enhance security</li>
+                    <li>To comply with legal obligations</li>
+                </ul>
+            </div>
+
+            <!-- Data Sharing and Disclosure -->
+            <div class="policy-section">
+                <h2><i class="fas fa-share-alt"></i> Data Sharing and Disclosure</h2>
+                <p>We do not sell, trade, or rent your personal information to third parties. However, we may share information in the following circumstances:</p>
+                
+                <h3>Service Providers</h3>
+                <p>We may employ third-party companies and individuals to facilitate our service, provide the service on our behalf, or assist us in analyzing how our service is used.</p>
+
+                <h3>Legal Requirements</h3>
+                <p>We may disclose your personal information if required to do so by law or in response to valid requests by public authorities.</p>
+
+                <h3>Business Transfers</h3>
+                <p>If we are involved in a merger, acquisition, or asset sale, your personal information may be transferred.</p>
+            </div>
+
+            <!-- Data Security -->
+            <div class="policy-section">
+                <h2><i class="fas fa-shield-alt"></i> Data Security</h2>
+                <p>We take reasonable measures to protect your personal information from unauthorized access, alteration, disclosure, or destruction. However, no method of transmission over the Internet or electronic storage is 100% secure.</p>
+                <p>We implement the following security measures:</p>
+                <ul>
+                    <li>SSL encryption for data transmission</li>
+                    <li>Regular security assessments</li>
+                    <li>Access controls and authentication</li>
+                    <li>Secure data storage practices</li>
+                </ul>
+            </div>
+
+            <!-- Your Rights -->
+            <div class="policy-section">
+                <h2><i class="fas fa-user-check"></i> Your Rights</h2>
+                <p>Depending on your location, you may have the following rights regarding your personal information:</p>
+                <ul>
+                    <li><strong>Access:</strong> Request access to your personal information</li>
+                    <li><strong>Correction:</strong> Request correction of inaccurate information</li>
+                    <li><strong>Deletion:</strong> Request deletion of your personal information</li>
+                    <li><strong>Objection:</strong> Object to processing of your information</li>
+                    <li><strong>Portability:</strong> Request transfer of your information</li>
+                    <li><strong>Withdrawal:</strong> Withdraw consent at any time</li>
+                </ul>
+                <p>To exercise these rights, please contact us using the information below.</p>
+            </div>
+
+            <!-- Children's Privacy -->
+            <div class="policy-section">
+                <h2><i class="fas fa-child"></i> Children's Privacy</h2>
+                <p>Our service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us.</p>
+            </div>
+
+            <!-- Third-Party Links -->
+            <div class="policy-section">
+                <h2><i class="fas fa-external-link-alt"></i> Third-Party Links</h2>
+                <p>Our website may contain links to other sites that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit.</p>
+                <p>We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+            </div>
+
+            <!-- Changes to This Policy -->
+            <div class="policy-section">
+                <h2><i class="fas fa-sync-alt"></i> Changes to This Policy</h2>
+                <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="contact-card">
+                <h3>Contact Us</h3>
+                <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                <a href="mailto:fahad.developer3122@gmail.com" class="contact-btn">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+       <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo"><i class="fas fa-code"></i>Muhammad <span>Fahad</span></a>
+                <div class="footer-links">
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms&condition.html">Terms of Service</a>
+                    <a href="return&refund-policy.html">Refund Policy</a>
+                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copyright">
+                    <p>© <span id="year"></span> Muhammad Fahad. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: var(--secondary);"></i> by <a href="#home">Muhammad Fahad</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script>
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Back to Top functionality
+        const backToTopBtn = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('active', window.pageYOffset > 300);
+        });
+
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Sticky header
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 100);
+        });
+    </script>
+</body>
+</html>
